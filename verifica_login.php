@@ -4,7 +4,7 @@
 
     if(!isset($_SESSION['email'])){
         header('Location: login.html');
-    }else(
+    }else{
         if($_SESSION['tipo_user'] == 1){
             header('Location: perfilcomerciante.php');
 
@@ -15,5 +15,5 @@
             echo"Tipo de usuario não identificado!";
             exit();
         }
-    )
+    }
 ?>
