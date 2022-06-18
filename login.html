@@ -64,17 +64,17 @@
                                     </div>
                                   </div>
 
-                                <form>
+                                <form action="login.php" method="post" >
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" placeholder="nome@exemplo.com" id="inputEmail"  required>
+                                        <input name="email" type="email" class="form-control" placeholder="nome@exemplo.com" id="inputEmail"  required>
                                         <label for="inputEmail">E-mail</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" class="form-control" placeholder="Senha" id="inputPassword"  required>
+                                        <input name="senha" type="password" class="form-control" placeholder="Senha" id="inputPassword"  required>
                                         <label for="inputPassword">Senha</label>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
-                                        <button class="btn btn-primary" formaction="#!">Login</a>
+                                        <button type="submit" class="btn btn-primary">Login</button>
                                     </div>
                                 </form>
                             </div>

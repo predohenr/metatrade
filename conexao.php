@@ -1,14 +1,10 @@
 <?php
 
-$usuario = 'root';
-$senha = '';
-$database = 'metatrade';
-$host = '127.0.0.1';
+define('HOST', '127.0.0.1');
+define('USUARIO', 'root');
+define('SENHA', '');
+define('DATABASE', 'metatrade');
 
-$mysqli = new mysqli($host, $usuario, $senha, $database);
-
-if($mysqli->error){
-    die("Falha ao se conectar com ao banco de dados: " . $mysqli->error);
-}
+$conexao = mysqli_connect(HOST, USUARIO, SENHA, DATABASE) or die ('Não possivel se conectar a base de dados!');
 
 ?>
