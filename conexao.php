@@ -3,7 +3,7 @@
 $usuario = 'root';
 $senha = '';
 $database = 'metatrade';
-$host = 'localhost';
+$host = '127.0.0.1';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 
