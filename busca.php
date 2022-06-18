@@ -75,7 +75,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link ms-2" aria-current="page" href="index.html">Home</a></li>
                             <li class="nav-item"><a class="nav-link ms-2" href="aboutus.html">Sobre nós</a></li>
-                            <li class="nav-item"><a class="btn btn-outline-light ms-3" href="login.html">Login</a></li>
+                            <li class="nav-item"><a class="btn btn-outline-light ms-3" href="login.html">Acesse seu Perfil</a></li>
                     </ul>
                     </div>
                 </div>
@@ -95,19 +95,14 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
     
         <!---catalogo--->
 
+        <div class="album py-5 bg-light">
+        <div class="container px-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         
     <?php
     if(count($resultados)){
         foreach($resultados as $Resultado){
     ?>
-    <label><?php echo $Resultado['nome_produto']; ?></label>
-    <br>
-
-
-
-        <div class="album py-5 bg-light">
-        <div class="container px-5">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <!--CARD-->
                 <div class="col">
                 <div class="card shadow-sm">
@@ -134,9 +129,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
                 </div>
-            </div>
-        </div>
-        </div>
+
 
     <?php
     }}else{
@@ -145,6 +138,10 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
     <?php
     }
     ?>
+
+            </div>
+        </div>
+        </div>
 
     </body>
 </html>
