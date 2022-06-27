@@ -1,3 +1,26 @@
+<?php
+    
+    session_start();
+    include('protect.php');
+    include('conexao.php');
+    if($_SESSION['tipo_user'] == 1){
+        echo"Você não tem aceso a essa página!";
+        header('Location: index.php');
+        exit();
+    }
+
+    $dbh = new PDO('mysql:host=127.0.0.1; dbname=metatrade', 'root', '');
+    $sth = $dbh->prepare('SELECT `cod_categoria_produto`, `nome_categoria` FROM `categoria_produto`');
+    $sth->execute();
+
+    $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    $sth = $dbh->prepare('SELECT `cod_cor`, `nome_cor` FROM `cor_produto`');
+    $sth->execute();
+
+    $cores = $sth->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
@@ -5,7 +28,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>metatrade - Adicionar Produto</title>
+        <title>metatrade - Adicionar Produto</title> 
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/img/metatrade_logoBranco.png" />
         <!-- Bootstrap icons-->
@@ -21,11 +44,11 @@
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger">
                 <div class="container px-5">
                     <img src="assets/img/metatrade_logoBranco.png" alt="logo metatrade">
-                    <a class="navbar-brand text-light me-5" href="index.html">metatrade</a>
+                    <a class="navbar-brand text-light me-5" href="index.php">metatrade</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link ms-2" aria-current="page" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link ms-2" aria-current="page" href="index.php">Home</a></li>
                             <li class="nav-item"><a class="nav-link ms-2" href="aboutus.html">Sobre nós</a></li>
                             <li class="nav-item"><a class="btn btn-outline-light ms-3" href="#!">Login</a></li>
                         </ul>
@@ -41,28 +64,49 @@
                             <div class="mb-3">
                                 <h4 class="text-right">Adicionar Produto</h4>
                             </div>
-                            <form action="" method="post" accept-charset="utf-8" autocomplete="on" enctype="multipart/form-data">
+
+
+
+                            <form action="insertProduto.php" method="post" accept-charset="utf-8" autocomplete="on" enctype="multipart/form-data">
                                 <div class="row mt-2">
                                     <div class="form-floating col-md-12">
-                                        <input class="form-control" type="text" id="nome" placeholder="Nome do Produto">
+                                        <input name="nome_produto" class="form-control" type="text" id="nome" placeholder="Nome do Produto">
                                         <label for="nome">Nome do Produto</label>
                                     </div>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="form-floating col-md-12">
-                                        <input class="form-control" id="preco" type="number" placeholder="Preço" required>
+                                        <input name="valor_produto" class="form-control" id="preco" type="text" placeholder="Preço" required>
                                         <label class="preco">Preço</label>
                                     </div>
                                     <div class="form-floating mt-2 col-md-12">
-                                        <input class="form-control" id="estoque" type="number" placeholder="Estoque" required>
+                                        <input name="qtd_estoque" class="form-control" id="estoque" type="number" placeholder="Estoque" required>
                                         <label class="estoque">Estoque Disponível</label>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="form-floating mt-3 col-md-12">
-                                            <input class="form-control" id="inputMessage" style="height:10rem;" type="text" placeholder="Descrição" required>
+                                            <input name="descricao_produto" class="form-control" id="inputMessage" style="height:10rem;" type="text" placeholder="Descrição" required>
                                             <label for="inputMessage">Descrição</label>
                                         </div>
                                     </div>
+
+                                    <div class="row mb-3">
+
+                                    <div class="form-floating mt-3 col-md-12">
+                                        <select name="categoria_produto"><?php     if(count($resultados)){
+                                                foreach($resultados as $Resultado){ { 
+                                            ?> <option value="<?php echo $Resultado['cod_categoria_produto'] ?>"><?php echo $Resultado['nome_categoria'] ?></option> <?php } }}?> </select>
+                                    </div>
+
+
+                                    <div class="form-floating mt-3 col-md-12">
+                                        <select name="cor_produto"><?php     if(count($cores)){
+                                                foreach($cores as $cor){ { 
+                                            ?> <option value="<?php echo $cor['cod_cor'] ?>"><?php echo $cor['nome_cor'] ?></option> <?php } }}?> </select>
+                                    </div>
+
+                                    </div>
+
                                     <div class="row mt-2">
                                         <label for="formFileMultiple" class="form-label">Multiple files input example</label>
                                         <input class="form-control" type="file" id="formFileMultiple" multiple required/>
@@ -70,11 +114,11 @@
                                 </div>
                                 
                                 <div class="row mt-5">
-                                    <div class="col-md-6"><label class="labels">Senha</label><input type="password" class="form-control" placeholder="Senha" required></div>
-                                    <div class="col-md-6"><label class="labels">Confirmar Senha</label><input type="password" class="form-control" placeholder="Confirmar Senha" required></div>
+                                    <div class="col-md-6"><label class="labels">Senha</label><input name="senha" type="password" class="form-control" placeholder="Senha" required></div>
+                                    <div class="col-md-6"><label class="labels">Confirmar Senha</label><input name="senhaconfirme" type="password" class="form-control" placeholder="Confirmar Senha" required></div>
                                 </div>
                                 <div class="mt-5 text-center">
-                                    <button class="btn btn-danger" formaction="catalogfornecedor.html">Adicionar</button>
+                                    <button class="btn btn-danger" type="submit">Adicionar</button>
                                 </div>
                             </form>
                         </div>

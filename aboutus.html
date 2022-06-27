@@ -18,17 +18,17 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-danger bg-dark">
         <div class="container px-5">
             <img src="assets/img/metatrade_logoBranco.png" alt="logo metatrade">
-            <a class="navbar-brand text-light me-5" href="index.html">metatrade</a>
+            <a class="navbar-brand text-light me-5" href="index.php">metatrade</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class=" col justify-content-center">
-                    <form class="d-flex me-5" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pesquise por produtos, marcas e lojas" aria-label="Search">
+                    <form action="busca_nome.php" method="get" class="d-flex" role="search">
+                        <input name="busca_produto" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-light" type="submit">Buscar</button>
-                    </form>
+                      </form>
                 </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link ms-2 text-light" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link ms-2 text-light" aria-current="page" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link ms-2 text-light" href="aboutus.html">Sobre nós</a></li>
                     <li class="nav-item"><a class="btn btn-outline-light ms-3" href="verifica_login.php">Login</a></li>
                 </ul>
@@ -172,11 +172,11 @@
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
-                        <form>
+                        <form action="contato.php" method="post">
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputFirstName" type="text" placeholder="Insira seu nome" required>
+                                        <input nome="nome" class="form-control" id="inputFirstName" type="text" placeholder="Insira seu nome" required>
                                         <label for="inputFirstName">Nome Completo</label>
                                     </div>
                                 </div>
@@ -184,13 +184,13 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputEmail" type="email" placeholder="nome@exemplo.com" required>
+                                        <input nome="email" class="form-control" id="inputEmail" type="email" placeholder="nome@exemplo.com" required>
                                         <label for="inputEmail">E-mail</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3 mb-md-0">
-                                        <input class="form-control" id="inputPhone" type="tel" placeholder="(12)93456-7890">
+                                        <input nome="telefone" class="form-control" id="inputPhone" type="tel" placeholder="(12)93456-7890">
                                         <label for="inputPhone">Telefone (Opcional)</label>
                                     </div>
                                 </div>
@@ -198,13 +198,13 @@
                             <div class="row mb-3">
                                 <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input class="form-control" id="inputMessage" style="height:10rem;" type="text" placeholder="Insira sua mensagem" required>
+                                        <input nome="mensagem" class="form-control" id="inputMessage" style="height:10rem;" type="text" placeholder="Insira sua mensagem" required>
                                         <label for="inputMessage">O que você tem a nos dizer?</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-4 mb-0 d-grid">
-                                    <button class="btn btn-primary btn-block" formaction="#">Enviar Mensagem</button>
+                                    <button class="btn btn-primary btn-block" type="submit">Enviar Mensagem</button>
                             </div>
                         </form>
                     </div>

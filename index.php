@@ -36,7 +36,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class=" col justify-content-center">
-                  <form action="busca.php" method="get" class="d-flex" role="search">
+                  <form action="busca_nome.php" method="get" class="d-flex" role="search">
                     <input name="busca_produto" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light" type="submit">Buscar</button>
                   </form>

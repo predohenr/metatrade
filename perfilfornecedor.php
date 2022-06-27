@@ -51,8 +51,8 @@
                             <div class="my-5">
                                 <img class="rounded-circle mt-5" width="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD46x50hPY8U1nHHImUIBvB6C8Edqvs2iKlw&usqp=CAU">
                             </div>
-                            <span class="font-weight-bold">José Pereira da Silva</span>
-                            <span class="text-black-50">josepereiradasilva@gmail.com</span>
+                            <span class="font-weight-bold"><?php echo $_SESSION['razao_social']; ?></span>
+                            <span class="text-black-50"><?php echo $_SESSION['email']; ?></span>
                             <span> </span>
                         </div>
                     </div>
@@ -64,35 +64,48 @@
                             <div class="row mt-3">
                                 <h5>Informações Cadastrais</h5>
                             </div>
+                            <form action="editarUsuario.php" method="POST">
                             <div class="row mt-2">
-                                <div class="col-md-12"><label class="labels">Nome Completo</label><input type="text" class="form-control" value="José Pereira da Silva"></div>
+                                <div class="col-md-12">
+                                <label class="labels">Razão Social</label>
+                                <input type="text" name ="razao_social" class="form-control" value="<?php echo $_SESSION['razao_social']; ?>"></div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Número</label><input type="text" class="form-control" value="(12)93456-7890"></div>
-                                <div class="col-md-12"><label class="labels">E-mail</label><input type="text" class="form-control" value="josepereiradasilva@gmail.com"></div>
+                                <div class="col-md-4"><label class="labels">DDD</label><input type="number" name ="ddd" class="form-control" value="<?php echo $_SESSION['ddd']; ?>"></div>
+                                <div class="col-md-8"><label class="labels">Número</label><input type="tel" placeholder="12345-6789" name ="telefone" class="form-control" value="<?php echo $_SESSION['telefone']; ?>"></div>
+                                <div class="col-md-12"><label class="labels">E-mail</label><input type="email" name ="email" class="form-control" value="<?php echo $_SESSION['email']; ?>"></div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">CNPJ</label><input type="text" class="form-control" value="12.345.678/0001-90"></div>
-                                <div class="col-md-12"><label class="labels">Endereço</label><input type="text" class="form-control" value="Rua 1, nº1"></div>
-                            </div>
-                            <div class="row mt-5">
-                                <h5>Catálogo</h5>
-                                <a class="btn btn-secondary btn-sm my-1" href="#!">Adicionar Produto</a>
-                                <a class="btn btn-secondary btn-sm my-1" href="#!">Remover Produto</a>
-                            </div>
-                            <div class="row mt-5">
-                                <h5>Alterar Senha</h5>
-                                <div class="col-md-6"><label class="labels">Senha</label><input type="password" class="form-control" placeholder="Senha" value=""></div>
-                                <div class="col-md-6"><label class="labels">Confirmar Senha</label><input type="password" class="form-control" placeholder="Confirmar Senha" value=""></div>
-                            </div>
-                            <div class="mt-5 text-center">
-                                <a class="btn btn-primary profile-button" href="#!">Salvar</a>
-                            </div>
-                            
-                            <div class="row mt-5">
-                                <a class="tn btn-secondary btn-sm my-1" href="logout.php?logout=true">Sair da conta</a>
+                                <div class="col-md-12"><label class="labels">CNPJ</label><input type="text" name ="cnpj" class="form-control" value="<?php echo $_SESSION['cnpj']; ?>"></div>
+                                <div class="col-md-12"><label class="labels">Data de Abertura</label><input type="date" name="data_abertura" class="form-control" value="<?php echo $_SESSION['data_abertura'];?>"></div>
+                                <div class="col-md-12"><label class="labels">Endereço</label><input type="text" name="rua_endereco" class="form-control" value="<?php echo $_SESSION['rua_endereco'];?>"></div>
+                                <div class="col-md-12"><label class="labels">Endereço</label><input type="text" name="cidade_endereco" class="form-control" value="<?php echo $_SESSION['cidade_endereco'];?>"></div>
+                                <div class="col-md-12"><label class="labels">Endereço</label><input type="text" name="numero_endereco" class="form-control" value="<?php echo $_SESSION['numero_endereco'];?>"></div>
+                                <div class="col-md-12"><label class="labels">CEP</label><input type="number" name ="cep" class="form-control" pattern="[0-9]{5}-[0-9]{3}" value="<?php echo $_SESSION['cep_endereco']; ?>"></div>
+                                <div class="col-md-12"><label class="labels">CÓDIGO UF</label><input type="text" name ="uf" class="form-control" value="<?php echo $_SESSION['cod_uf_endereco']; ?>"></div>
                             </div>
 
+                            <div class="row mt-5">
+                                <h5>Confirme a senha para realizar alterações</h5>
+                                <div class="col-md-6"><label class="labels">Senha</label><input name ="senha" type="password" class="form-control" placeholder="Senha" required></div>
+                                 <div class="col-md-6"><label class="labels">Confirmar Senha</label><input name = "senhaconfirme" type="password" class="form-control" placeholder="Confirmar Senha" required></div>
+                            </div>
+                            <div class="mt-5 text-center">
+                                <button class="btn btn-primary profile-button" type="submit">Salvar Mudanças</button>
+                            </div>
+
+                            </form>
+
+                            <div class="row mt-5">
+                                <h5>Catálogo</h5>
+                                <a class="btn btn-secondary btn-sm my-1" href="addproduct.php">Adicionar Produto</a>
+                                <a class="btn btn-secondary btn-sm my-1" href="#!">Remover Produto</a>
+                            </div>
+
+                            <div class="row mt-5">
+                                <a class="btn btn-secondary btn-sm my-1" href="logout.php?logout=true">Sair da Conta</a>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
