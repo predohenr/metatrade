@@ -56,7 +56,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Encontre os melhores fornecedores para o seu negócio!</h1>
-                            <p class="lead text-white-50 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cumque deleniti corrupti obcaecati fugit alias, recusandae possimus bld accusantium eum alias!</p>
+                            <p class="lead text-white-50 mb-4">Aqui no nosso site, você poderá encontrar facilmente novos fornecedores para o seu comércio!</p>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,6 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card-body">
                         <div class="feature bg-danger bg-gradient text-white rounded-3 mb-3"><i class="bi bi-handbag"></i></div>
                         <h5 style="color: black;" class="card-title">Moda</h5>
-                        <p style="color: black;" class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                   </a>
                 </div>
@@ -91,7 +90,6 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card-body">
                         <div class="feature bg-danger bg-gradient text-white rounded-3 mb-3"><i class="bi bi-house"></i></div>
                         <h5 style="color: black;" class="card-title">Casa</h5>
-                        <p style="color: black;" class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                   </a>
                 </div>
@@ -102,7 +100,6 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card-body">
                         <div class="feature bg-danger bg-gradient text-white rounded-3 mb-3"><i class="bi bi-laptop"></i></div>
                         <h5 style="color: black;" class="card-title">Eletronicos</h5>
-                        <p style="color: black;" class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                   </a>
                 </div>
