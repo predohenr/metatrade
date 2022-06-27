@@ -19,7 +19,7 @@
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger">
                 <div class="container px-5">
                     <img src="assets/img/metatrade_logoBranco.png" alt="logo metatrade">
-                    <a class="navbar-brand text-light me-5" href="index.html">metatrade</a>
+                    <a class="navbar-brand text-light me-5" href="index.php">metatrade</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -79,25 +79,31 @@
                                   </div>
 
 
-                                <form action="" method="post" accept-charset="utf-8" autocomplete="on" enctype="multipart/form-data">
+                                <form action="register.php" method="post" accept-charset="utf-8" autocomplete="on" enctype="multipart/form-data">
                                     <div class="row mb-3">
                                         <div class="col-md-12">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputFirstName" type="text" placeholder="Insira seu nome" required>
-                                                <label for="inputFirstName">Nome Completo</label>
+                                                <input name ="razao_social" class="form-control" id="inputFirstName" type="text" placeholder="Insira a razão social: " required>
+                                                <label for="inputFirstName">Razão Social</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputEmail" type="email" placeholder="nome@exemplo.com" required>
+                                                <input name="email" class="form-control" id="inputEmail" type="email" placeholder="nome@exemplo.com" required>
                                                 <label for="inputEmail">E-mail</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating mb-3 mb-md-0">
-                                                <input class="form-control" id="inputPhone" type="tel" placeholder="(12)93456-7890" required>
+                                                <input name="ddd" class="form-control" id="inputPhone" type="tel" placeholder="(12)93456-7890" required>
+                                                <label for="inputPhone">DDD</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating mb-3 mb-md-0">
+                                                <input name="telefone" class="form-control" id="inputPhone" type="tel" placeholder="(12)93456-7890" required>
                                                 <label for="inputPhone">Telefone</label>
                                             </div>
                                         </div>

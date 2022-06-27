@@ -54,7 +54,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link ms-2" aria-current="page" href="index.php">Home</a></li>
                         <li class="nav-item"><a class="nav-link ms-2" href="aboutus.html">Sobre nós</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-light ms-3" href="#!">Meu Perfil</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-light ms-3" href="verifica_login.php">Meu Perfil</a></li>
                     </ul>
                 </div>
             </div>

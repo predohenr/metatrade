@@ -99,7 +99,7 @@
                             <div class="row mt-5">
                                 <h5>Catálogo</h5>
                                 <a class="btn btn-secondary btn-sm my-1" href="addproduct.php">Adicionar Produto</a>
-                                <a class="btn btn-secondary btn-sm my-1" href="#!">Remover Produto</a>
+                                <a class="btn btn-secondary btn-sm my-1" href="catalogfornecedor.php">Ver produtos</a>
                             </div>
 
                             <div class="row mt-5">
