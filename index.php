@@ -32,7 +32,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
     <nav class="navbar fixed-top navbar-expand-lg navbar-danger bg-danger">
         <div class="container px-5">
             <img src="assets/img/metatrade_logoBranco.png" alt="logo metatrade">
-            <a class="navbar-brand text-light me-5" href="index.html">metatrade</a>
+            <a class="navbar-brand text-light me-5" href="index.php">metatrade</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class=" col justify-content-center">
@@ -42,7 +42,7 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                   </form>
                 </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link ms-2 text-light" aria-current="page" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link ms-2 text-light" aria-current="page" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link ms-2 text-light" href="aboutus.html">Sobre nós</a></li>
                     <li class="nav-item"><a class="btn btn-outline-light ms-3" href="verifica_login.php">Login</a></li>
                 </ul>
@@ -56,7 +56,6 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Encontre os melhores fornecedores para o seu negócio!</h1>
-                            <p class="lead text-white-50 mb-4">Aqui no nosso site, você poderá encontrar facilmente novos fornecedores para o seu comércio!</p>
                         </div>
                     </div>
                 </div>
