@@ -56,7 +56,6 @@ $resultados = $sth->fetchAll(PDO::FETCH_ASSOC);
                     <div class="col-lg-6">
                         <div class="text-center my-5">
                             <h1 class="display-5 fw-bolder text-white mb-2">Encontre os melhores fornecedores para o seu negócio!</h1>
-                            <p class="lead text-white-50 mb-4">Aqui no nosso site, você poderá encontrar facilmente novos fornecedores para o seu comércio!</p>
                         </div>
                     </div>
                 </div>
